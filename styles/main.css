@@ -148,3 +148,11 @@ form .btn-primary {
   margin-left: 5px;
   flex-shrink: 0; /* Prevent button from shrinking */
 }
+
+.glow {
+  display: inline-block;
+  animation: glowing 2s ease-in-out infinite; /* Increase the animation duration */
+  color: #720670;
+  text-shadow: 0 0 8px #720670;
+  border: none !important; /* Remove the border */
+}
