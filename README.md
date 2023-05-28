@@ -9,6 +9,8 @@ Welcome to SelfPaced.io - an innovative self-paced learning platform designed to
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [Docker Hub](#docker-hub)
+
 
 ## Description
 
@@ -66,3 +68,15 @@ Contributions are welcome! If you'd like to contribute to the SelfPaced.io "Comi
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Docker Hub
+
+The SelfPaced.io "Coming Soon" template is also available on Docker Hub. 
+
+You can find the Docker image at `itz4blitz/selfpacedcomingsoon:latest`. 
+
+To use the Docker image, you can pull it using the following command:
+
+```bash
+docker pull itz4blitz/selfpacedcomingsoon:latest
+```
