@@ -1,0 +1,150 @@
+body {
+  background: url('../img/247.jpg'), linear-gradient(to right, #bdc3c7, #2c3e50);
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#logo {
+  width: 200px;
+  margin: 20px 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 100px auto;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.siteNameText {
+  font-size: 3em;
+  font-weight: 900;
+  color: #720670;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1em;
+  padding: 10px;
+}
+
+h2, h3 {
+  font-weight: 600;
+  color: #ecf0f1;
+  margin-bottom: 2em;
+}
+
+h5 {
+  color: #ecf0f1;
+  margin-bottom: 20px;
+}
+
+#timer {
+  display: inline-block;
+  font-size: 2.4em;
+  margin: 30px 0;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+#timer .unit {
+  color: #720670;
+}
+
+#our-story {
+  color: #ecf0f1;
+  line-height: 1.5em;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+  padding: 10px;
+}
+
+#newsletter {
+  margin: 50px 0;
+}
+
+#newsletter h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+#newsletter-info {
+  color: #ffffff;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  text-align: center;
+  text-justify: inter-word;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+#newsletter .form-control {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px; /* Add margin bottom */
+}
+
+#newsletter .btn-primary {
+  background-color: #720670 !important;
+  border: 2px solid #720670;
+  padding: 10px;
+  border-radius: 5px;
+  color: #ffffff !important;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+}
+
+#newsletter .btn-primary:hover {
+  background-color: transparent !important;
+  border-color: #ffffff;
+}
+
+.social {
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+.social a {
+  color: #fff;
+  margin: 0 10px;
+}
+
+.social a:hover {
+  color: #720670;
+}
+
+form {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap; /* Add flex-wrap property */
+  justify-content: center; /* Center the form elements */
+}
+
+form .form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 36px;
+  flex-grow: 1; /* Allow input to grow and take remaining space */
+}
+
+form .btn-primary {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: 36px;
+  margin-left: 5px;
+  flex-shrink: 0; /* Prevent button from shrinking */
+}

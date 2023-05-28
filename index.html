@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+    <title>SelfPaced.io - Coming Soon!</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="siteNameText">SelfPaced.io</h1>
+        <a href="/"><img src="img/logo.png" alt="SelfPaced.io Logo" id="logo" class="logo-animation"></a>  
+        <h5>Launching Careers, Changing Lives</h5>
+        <hr style="border-top: 1px solid #720670; width: 50%;"> 
+        <h2>The ultimate <strong>Self-Paced</strong> bootcamp is coming!</h2>
+
+        <div id="countdown">
+            <p><span id="timer"></span></p>
+        </div>
+
+        <p id="our-story">
+            SelfPaced.io is an innovative self-paced learning platform dedicated to empowering individuals with the necessary tech skills to achieve their career goals. We go beyond the traditional bootcamp model, providing a flexible and personalized learning experience that allows you to acquire the skills you need at your own pace and on your own terms. What sets us apart from universities and bootcamps is our revolutionary approach to learning and unwavering commitment to making a positive impact on society.
+        </p>
+        
+        <p id="our-story">
+            At SelfPaced, we curate the best content to help students learn the most in-demand development skills. What sets us apart is our innovative approach. Our students learn using comprehensive yet bite-sized content, ensuring a deep understanding of the material before moving forward.
+        </p>
+        
+        <p id="our-story">
+            Our platform leverages AI/ChatGPT as a part of the learning process, enabling faster assistance and helping students figure out solutions instead of simply providing answers. We also utilize reinforcement learning through flashcards, and unlike most bootcamps that focus solely on frontend/backend development, our curriculum covers comprehensive topics such as data structures, design patterns, and architectural patterns.
+        </p>
+        
+        <p id="our-story">
+            We prioritize assisting individuals affected by the criminal justice system, the unemployed, and the underemployed. We are thrilled to announce the forthcoming launch of SelfPaced.io in 2023, as we continue our mission to transform lives through accessible and inclusive education.
+        </p>
+        
+        
+
+        <div id="newsletter">
+            <h3>Sign up for our newsletter</h3>
+        <hr style="border-top: 1px solid #720670; width: 50%;"> 
+            <p id="newsletter-info">Stay updated with the latest information and be the first to know when updates are announced.</p>
+            <form class="d-flex justify-content-center" id="subscribe-form">
+                <div class="h-captcha" data-sitekey="3bcec71b-7c7e-4ce4-b637-4c1f29fb0fd9"></div>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                <button type="submit" class="btn btn-primary subscribe-button">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+        
+    </div>
+    <script src="countdown.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+$("#subscribe-form").submit(function(event) {
+    event.preventDefault(); // Prevent the form from submitting via the browser.
+
+    grecaptcha.enterprise.ready(function() {
+        grecaptcha.enterprise.execute('6Ld5J0cmAAAAAM5z4nbuh3bk3YDJhGeentkig5Vk', {action: 'subscribe'}).then(function(token) {
+            var email = $("#email").val();
+            var userAgent = navigator.userAgent;
+            var data = { email: email, token: token, userAgent: userAgent };
+
+            $.ajax({
+                type: "POST",
+                url: "/api/subscribe",
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                dataType: "json",
+                success: function(data, textStatus, jqXHR) {
+                    showNotification('success', 'You have subscribed successfully!');
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    showNotification('error', 'An error occurred. Please try again.');
+                }
+            });
+        });
+    });
+});
+
+</script>
+</body>
+
+</html>
