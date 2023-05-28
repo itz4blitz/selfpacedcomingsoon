@@ -106,10 +106,11 @@ h5 {
   align-items: center;
 }
 
-#newsletter .btn-primary:hover {
+#newsletter .btn-primary:enabled:hover {
   background-color: transparent !important;
-  border-color: #ffffff;
+  border-color: #ffffff !important;
 }
+
 
 .social {
   font-size: 24px;
@@ -155,4 +156,8 @@ form .btn-primary {
   color: #720670;
   text-shadow: 0 0 8px #720670;
   border: none !important; /* Remove the border */
+}
+
+.spinner-border {
+  display: none;
 }
